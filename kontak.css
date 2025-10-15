@@ -1,0 +1,665 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --primary-color: #A32929; /* Merah Maroon/Coklat Kemerahan (Untuk Delta dan elemen utama) */
+    --logo-green: #4CAF50; /* Hijau (Untuk Jajanan) */
+    --secondary-color: #E3F2E3; 
+    --text-dark: #333333;
+    --text-light: #555555;
+    --border-light: #E0E0E0;
+    --green-accent: #4CAF50; /* Hijau utama */
+    --red-accent: #FF5252; /* Merah/Pink accent */
+    --light-green-accent: #8BC34A; /* Hijau Muda/Lime accent */
+    --yellow-star: #FFC107;
+    --font-primary: 'Poppins', sans-serif;
+    --max-width: 1200px;
+    --whatsapp-green: #25D366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+/* --- Section Styling --- */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.green-text {
+    color: var(--green-accent);
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* --- MODIFIKASI WARNA TEKS LOGO --- */
+.logo .logo-green,
+.logo-green {
+    color: var(--logo-green); /* Teks "Jajanan" */
+    margin-right: 3px;
+}
+
+.logo .logo-red,
+.logo-red {
+    color: var(--primary-color); /* Teks "Delta" */
+}
+/* ------------------------------------- */
+
+.main-nav ul,
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li a,
+.navbar nav ul li a {
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-decoration: none;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.navbar nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav li a:hover,
+.main-nav li a.active,
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.navbar nav ul li a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+/* Hubungi Kami Section */
+.contact-header {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #f7f7f7;
+}
+
+.contact-header .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.contact-header p {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--green-accent), var(--primary-color));
+}
+
+.card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--red-accent), #EF5350);
+}
+
+.card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--light-green-accent), #9CCC65);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle.location {
+    background: linear-gradient(135deg, var(--green-accent), #66BB6A);
+}
+
+.icon-circle.phone {
+    background: linear-gradient(135deg, var(--red-accent), #EF5350);
+}
+
+.icon-circle.email {
+    background: linear-gradient(135deg, var(--light-green-accent), #9CCC65);
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.card p {
+    margin-bottom: 8px;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.country-pill {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--green-accent), #66BB6A);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 25px;
+    font-size: 13px;
+    margin-top: 15px;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Tentang UMKM Section */
+.about-umkm-section {
+    background-color: #f7f7f7;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-umkm-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.about-umkm-section .subtitle {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.commitment-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.commitment-card {
+    background-color: #ffffff;
+    padding: 35px 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.commitment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.commitment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.commitment-card:nth-child(1)::before {
+    background: linear-gradient(90deg, var(--green-accent), #66BB6A);
+}
+
+.commitment-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--red-accent), #EF5350);
+}
+
+.commitment-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--light-green-accent), #9CCC65);
+}
+
+.icon-circle-small {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle-small.check {
+    background: linear-gradient(135deg, var(--green-accent), #66BB6A);
+}
+
+.icon-circle-small.people {
+    background: linear-gradient(135deg, var(--red-accent), #EF5350);
+}
+
+.icon-circle-small.commit {
+    background: linear-gradient(135deg, var(--light-green-accent), #9CCC65);
+}
+
+.commitment-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.commitment-card p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Collaboration Section */
+.collaboration-section {
+    background: linear-gradient(135deg, var(--primary-color), #8C2525);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.collaboration-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+    background-size: 50px 50px;
+}
+
+.collaboration-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.collaboration-section p:first-child {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.collaboration-section p:nth-child(2) {
+    font-size: 17px;
+    max-width: 800px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.collaboration-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, var(--whatsapp-green), #1DA851);
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #1DA851, #128C3E);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.call-btn {
+    background: linear-gradient(135deg, var(--red-accent), #E53935);
+}
+
+.call-btn:hover {
+    background: linear-gradient(135deg, #E53935, #C62828);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 82, 82, 0.4);
+}
+
+/* --- Footer --- */
+.main-footer,
+footer {
+    background-color: #fce4ec;
+    padding: 50px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.footer-layout,
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.footer-menu h3,
+.footer-contact h3,
+.footer-links h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.footer-menu ul,
+.footer-contact ul,
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li a,
+.footer-contact li,
+.footer-links ul li a {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+.footer-links ul li a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-contact li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media (max-width: 992px) {
+    .contact-cards,
+    .commitment-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .footer-layout,
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-menu ul,
+    .footer-contact ul,
+    .footer-links ul {
+        text-align: left;
+        display: inline-block;
+    }
+    
+    .collaboration-section p:first-child {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card,
+    .commitment-card {
+        padding: 30px 20px;
+    }
+    
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .icon-circle-small {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+    
+    .card h2,
+    .commitment-card h3 {
+        font-size: 17px;
+    }
+    
+    .card p,
+    .commitment-card p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-nav,
+    .navbar nav {
+        display: none;
+    }
+    
+    .header-content,
+    .navbar {
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 5px;
+    }
+
+    .section,
+    .contact-header,
+    .about-umkm-section {
+        padding: 50px 0;
+    }
+
+    .contact-cards,
+    .commitment-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card,
+    .commitment-card {
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 12px;
+    }
+    
+    .collaboration-section {
+        padding: 50px 15px;
+    }
+    
+    .collaboration-section p:first-child {
+        font-size: 22px;
+    }
+    
+    .collaboration-section p:nth-child(2) {
+        font-size: 15px;
+    }
+    
+    .collaboration-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 25px;
+    }
+}
