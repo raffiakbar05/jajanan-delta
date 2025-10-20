@@ -1,14 +1,13 @@
 /* --- Global Reset & Variables --- */
 :root {
-    --primary-color: #A32929; /* Merah Maroon/Coklat Kemerahan (Untuk Delta dan elemen utama) */
-    --logo-green: #4CAF50; /* Hijau (Untuk Jajanan) */
-    --secondary-color: #E3F2E3; 
+    --primary-color: #A32929;
+    --logo-green: #4CAF50;
     --text-dark: #333333;
     --text-light: #555555;
     --border-light: #E0E0E0;
-    --green-accent: #4CAF50; /* Hijau utama */
-    --red-accent: #FF5252; /* Merah/Pink accent */
-    --light-green-accent: #8BC34A; /* Hijau Muda/Lime accent */
+    --green-accent: #4CAF50;
+    --red-accent: #FF5252;
+    --light-green-accent: #8BC34A;
     --yellow-star: #FFC107;
     --font-primary: 'Poppins', sans-serif;
     --max-width: 1200px;
@@ -32,40 +31,13 @@ body {
     padding: 0 20px;
 }
 
-.primary-color {
-    color: var(--primary-color);
-}
-
 a {
     text-decoration: none;
     color: var(--text-dark);
 }
 
-/* --- Section Styling --- */
-.section {
-    padding: 80px 0;
-}
-
-.section-title {
+.text-center {
     text-align: center;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--text-light);
-    margin-bottom: 50px;
-}
-
-.section-subtitle-large {
-    text-align: center;
-    font-size: 18px;
-    color: var(--text-dark);
-    max-width: 800px;
-    margin: 0 auto 50px;
-    line-height: 1.8;
 }
 
 /* --- Header & Navigation --- */
@@ -93,18 +65,14 @@ a {
     margin-right: 8px;
 }
 
-/* --- MODIFIKASI WARNA TEKS LOGO --- */
-.logo .logo-green,
 .logo-green {
-    color: var(--logo-green); /* Teks "Jajanan" */
+    color: var(--logo-green);
     margin-right: 3px;
 }
 
-.logo .logo-red,
 .logo-red {
-    color: var(--primary-color); /* Teks "Delta" */
+    color: var(--primary-color);
 }
-/* ------------------------------------- */
 
 .main-nav ul {
     list-style: none;
@@ -122,430 +90,49 @@ a {
     color: var(--primary-color);
 }
 
-/* --- Buttons (CTA) --- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: background-color 0.3s, color 0.3s;
-    border: 2px solid transparent;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    margin-right: 15px;
-}
-
-.btn-primary i {
-    margin-right: 8px;
-}
-
-.btn-primary:hover {
-    background-color: #8C2525;
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border-color: var(--border-light);
-    color: var(--text-dark);
-    padding: 10px 25px;
-}
-
-.btn-secondary:hover {
-    border-color: var(--primary-color);
-}
-
-.text-center {
-    text-align: center;
-}
-
-.button-container {
-    margin-top: 50px;
-}
-
-/* --- Search Bar (Produk Page) --- */
-.search-bar-container {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 10px 20px;
-    background-color: #ffffff;
-}
-
-.search-bar-container input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 8px;
-    font-size: 16px;
-    color: var(--text-dark);
-}
-
-.search-bar-container i {
-    color: var(--text-light);
-    margin-right: 10px;
-}
-
-/* --- Hero Section (Home) --- */
-.hero-section {
-    padding: 100px 0;
-    background-color: #f7f7f7;
-}
-
-.hero-layout {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    color: var(--text-light);
-    margin-bottom: 30px;
-    line-height: 1.8;
-}
-
-.hero-image {
-    flex: 1;
-    text-align: right;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Cerita Kami Section (About) --- */
-.cerita-kami-section {
-    background-color: #ffffff;
-}
-
-.cerita-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    padding: 50px 0;
-}
-
-.cerita-text {
-    flex: 1;
-}
-
-.cerita-text p {
-    color: var(--text-light);
-    margin-bottom: 20px;
-    line-height: 1.7;
-    font-size: 15px;
-}
-
-.cerita-image {
-    flex: 1;
-}
-
-.cerita-image img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Why Choose Us / Nilai Kami Section --- */
-.why-choose-us,
-.nilai-kami-section {
-    background-color: #f7f7f7;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.feature-card {
-    background-color: #ffffff;
-    padding: 30px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid var(--border-light);
-    transition: box-shadow 0.3s;
-}
-
-.feature-card:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.icon-wrapper {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: #ffffff;
-}
-
-.green-icon { background-color: var(--green-accent); }
-.red-icon { background-color: var(--red-accent); }
-.light-green-icon { background-color: var(--light-green-accent); }
-.white-icon { background-color: #ffffff; color: var(--primary-color); } 
-
-.feature-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    color: var(--text-light);
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.progress-bar {
-    height: 6px;
-    border-radius: 3px;
-    width: 100%;
-}
-
-.green-bar { background-color: var(--green-accent); }
-.red-bar { background-color: var(--red-accent); }
-.light-green-bar { background-color: var(--light-green-accent); }
-
-/* Bahan Alami Card (About) */
-.bahan-alami-wrapper {
-    padding: 20px 0;
-}
-
-.bahan-alami-card {
-    display: flex;
-    align-items: center;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid var(--green-accent);
-    background-color: #E8F5E9; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.bahan-alami-card h4 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 3px;
-}
-
-.bahan-alami-card p {
-    font-size: 14px;
-    color: var(--text-dark);
-}
-
-/* --- Small Feature Cards (Home) --- */
-.small-feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.small-feature-card {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border-light);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
-}
-
-.small-feature-card h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 3px;
-}
-
-.small-feature-card p {
-    font-size: 13px;
-    color: var(--text-light);
-}
-
-.icon-small-wrapper {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: #ffffff;
-    margin-right: 15px;
-}
-
-.green-border { border-left: 5px solid var(--green-accent); }
-.red-border { border-left: 5px solid var(--red-accent); }
-.light-green-border { border-left: 5px solid var(--light-green-accent); }
-
-/* --- Visi & Misi Section (About) --- */
-.visi-misi-section {
-    background-color: #ffffff;
-}
-
-.visi-misi-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.misi-card,
-.visi-card {
-    padding: 40px;
-    border-radius: 8px;
-    color: #ffffff;
-    text-align: center;
-}
-
-.misi-card {
-    background-color: var(--green-accent);
-}
-
-.visi-card {
-    background-color: var(--primary-color);
-}
-
-.misi-card h3,
-.visi-card h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.misi-card p,
-.visi-card p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #ffffff;
-}
-
-/* --- Komitmen Kami (About) --- */
-.komitmen-section {
-    background-color: #f7f7f7;
-}
-
-.komitmen-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.komitmen-card {
-    background-color: #ffffff;
-    padding: 30px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid var(--border-light);
-    border-bottom-width: 5px; 
-    transition: box-shadow 0.3s;
-}
-
-.komitmen-card.green-border { border-bottom-color: var(--green-accent); }
-.komitmen-card.red-border { border-bottom-color: var(--red-accent); }
-.komitmen-card.light-green-border { border-bottom-color: var(--light-green-accent); }
-
-
-/* --- Featured Products (Home & Product Page) --- */
-.product-list-section {
-    background-color: #ffffff;
-    padding-top: 0; 
-}
-
-/* Product Grid untuk Halaman Beranda (3 kolom) */
-.featured-products .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-/* Product Grid untuk Halaman Produk (4 kolom) */
-.product-full-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.product-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--border-light);
-}
-
-.product-card img {
-    width: 100%;
-    height: 200px; 
-    object-fit: cover;
-    display: block;
-}
-
-.product-card h3 {
-    font-size: 18px; 
-    font-weight: 600;
-    padding: 15px 20px 5px;
-    min-height: 55px; 
-}
-
-.product-desc {
-    font-size: 13px; 
-    color: var(--text-light);
-    padding: 0 20px 10px;
-    min-height: 50px; 
-}
-
-.product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px 20px;
-}
-
-.price {
-    font-size: 16px; 
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.rating .yellow {
-    color: var(--yellow-star);
-    font-size: 14px;
-}
-
-/* --- NEW: Testimoni Page Styling --- */
-
+/* --- Testimoni Intro Section --- */
 .testimoni-intro-section {
-    background-color: #fcf7f7; /* Background merah muda sangat pucat */
+    background: linear-gradient(135deg, #fcf7f7 0%, #f8f9fa 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
 }
 
-/* Summary Cards (Kepuasan Pelanggan & Ulasan Positif) */
+.testimoni-intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('asset/hero_section.jpg') center/cover;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.testimoni-intro-section .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+.testimoni-intro-section .section-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.testimoni-intro-section .section-subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* --- Summary Cards --- */
 .summary-card-grid {
     display: flex;
     justify-content: center;
@@ -580,11 +167,13 @@ a {
     height: 4px;
 }
 
-.summary-card.green-border::before { background: linear-gradient(90deg, var(--green-accent), #66BB6A); }
-.summary-card.red-border::before { background: linear-gradient(90deg, var(--red-accent), #EF5350); }
+.summary-card.green-border::before { 
+    background: linear-gradient(90deg, var(--green-accent), #66BB6A); 
+}
 
-.summary-card.green-border { border-top-color: var(--green-accent); }
-.summary-card.red-border { border-top-color: var(--red-accent); }
+.summary-card.red-border::before { 
+    background: linear-gradient(90deg, var(--red-accent), #EF5350); 
+}
 
 .summary-icon-wrapper {
     width: 80px;
@@ -607,13 +196,29 @@ a {
 }
 
 .summary-card h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 }
 
-/* Full Testimonials Grid */
+/* --- Testimonials Section --- */
 .full-testimonials-section {
     background-color: #ffffff;
+    margin-top: 0;
+    padding-top: 100px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    font-size: 18px;
 }
 
 .testimonial-grid {
@@ -670,19 +275,27 @@ a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.green-avatar { background: linear-gradient(135deg, var(--green-accent), #66BB6A); }
-.red-avatar { background: linear-gradient(135deg, var(--red-accent), #EF5350); }
-.light-green-avatar { background: linear-gradient(135deg, var(--light-green-accent), #9CCC65); }
+.green-avatar { 
+    background: linear-gradient(135deg, var(--green-accent), #66BB6A); 
+}
+
+.red-avatar { 
+    background: linear-gradient(135deg, var(--red-accent), #EF5350); 
+}
+
+.light-green-avatar { 
+    background: linear-gradient(135deg, var(--light-green-accent), #9CCC65); 
+}
 
 .user-details h4 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 2px;
 }
 
 .location {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-light);
     display: flex;
     align-items: center;
@@ -702,7 +315,7 @@ a {
     margin-bottom: 20px;
     flex-grow: 1;
     line-height: 1.7;
-    font-size: 15px;
+    font-size: 17px;
     position: relative;
 }
 
@@ -728,15 +341,14 @@ a {
     filter: drop-shadow(0 1px 2px rgba(255, 193, 7, 0.3));
 }
 
-
-/* Large Quote Card */
+/* --- Large Quote Card --- */
 .large-quote-card {
     background: linear-gradient(135deg, #E8F5E9, #F1F8F3);
     padding: 40px 35px;
     border-radius: 15px;
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 80px;
     border: 1px solid rgba(76, 175, 80, 0.2);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     position: relative;
@@ -774,7 +386,7 @@ a {
 }
 
 .quote-text {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.6;
@@ -803,12 +415,11 @@ a {
 }
 
 .quote-author {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
 }
-
 
 /* --- Footer --- */
 .main-footer {
@@ -828,13 +439,13 @@ a {
 }
 
 .footer-brand p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-light);
 }
 
 .footer-menu h3,
 .footer-contact h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
     color: var(--text-dark);
@@ -848,7 +459,7 @@ a {
 
 .footer-menu li a,
 .footer-contact li {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-light);
     margin-bottom: 10px;
     display: flex;
@@ -861,23 +472,9 @@ a {
     margin-top: 3px;
 }
 
-/* --- Media Queries (Responsiveness) --- */
-@media (max-width: 1200px) {
-    .product-full-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
+/* --- Media Queries --- */
 @media (max-width: 992px) {
-    .hero-layout,
-    .cerita-layout,
-    .feature-grid,
-    .small-feature-grid,
-    .visi-misi-grid,
-    .komitmen-grid,
-    .testimonial-grid,
-    .featured-products .product-grid,
-    .product-full-grid { 
+    .testimonial-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
@@ -886,16 +483,6 @@ a {
         flex-direction: column;
         align-items: center;
         gap: 20px;
-    }
-    
-    .hero-layout,
-    .cerita-layout {
-        flex-direction: column-reverse; 
-        text-align: center;
-    }
-    
-    .hero-text h1 {
-        font-size: 38px;
     }
     
     .footer-layout {
@@ -962,12 +549,6 @@ a {
         justify-content: center;
     }
 
-    .section {
-        padding: 50px 0;
-    }
-
-    .product-full-grid,
-    .featured-products .product-grid,
     .testimonial-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -976,12 +557,6 @@ a {
     .testimonial-card {
         max-width: 400px;
         margin: 0 auto;
-    }
-    
-    .hero-cta {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .large-quote-card {
