@@ -152,15 +152,34 @@ a {
 
 /* Hubungi Kami Section */
 .contact-header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: linear-gradient(135deg, #f7f7f7 0%, #e9ecef 100%);
+    position: relative;
     text-align: center;
-    padding: 80px 0;
-    background-color: #f7f7f7;
+}
+
+.contact-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('asset/monumen_jayandaru.jpg') center/cover;
+    opacity: 0.08;
+    z-index: 0;
 }
 
 .contact-header .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-header h1 {
@@ -607,17 +626,64 @@ footer {
     }
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
     .main-nav,
     .navbar nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .main-nav.active,
+    .navbar nav.active {
+        display: block;
+    }
+    
+    .main-nav ul,
+    .navbar nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .main-nav li,
+    .navbar nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .main-nav li a,
+    .navbar nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f0f0f0;
     }
     
     .header-content,
     .navbar {
-        justify-content: center;
-        flex-direction: column;
-        padding-bottom: 5px;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 15px;
     }
 
     .section,

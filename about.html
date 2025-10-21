@@ -19,7 +19,10 @@
                 <img src="asset/logo.jpg" alt="Logo Jajanan Delta"> 
                 <span><span class="logo-green">Jajanan</span> <span class="logo-red">Delta</span></span>
             </a>
-            <nav class="main-nav">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="beranda.html">Beranda</a></li>
                     <li><a href="about.html" class="active">Tentang Kami</a></li>
@@ -166,5 +169,22 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (mobileMenuToggle && mainNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

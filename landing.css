@@ -146,8 +146,8 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('asset/hero_section.jpg') center/cover;
-    opacity: 0.05;
+    background: url('asset/monumen_jayandaru.jpg') center/cover;
+    opacity: 0.08;
     z-index: 0;
 }
 
@@ -467,7 +467,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('asset/hero_section.jpg') center/cover;
+    background: url('asset/monumen_jayandaru.jpg') center/cover;
     opacity: 0.1;
 }
 

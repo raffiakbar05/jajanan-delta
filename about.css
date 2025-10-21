@@ -126,8 +126,8 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('asset/hero_section.jpg') center/cover;
-    opacity: 0.05;
+    background: url('asset/monumen_jayandaru.jpg') center/cover;
+    opacity: 0.08;
     z-index: 0;
 }
 
@@ -569,13 +569,55 @@ a {
     }
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
     .main-nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .main-nav li a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f0f0f0;
     }
     
     .header-content {
-        justify-content: center;
+        position: relative;
     }
 
     .section {
