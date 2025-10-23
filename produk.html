@@ -435,9 +435,9 @@
             
             productCards.forEach((card, index) => {
                 const productName = card.querySelector('h3').textContent.toLowerCase();
-                const productDesc = card.querySelector('.product-desc').textContent.toLowerCase();
+                // const productDesc = card.querySelector('.product-desc').textContent.toLowerCase();
                 
-                if (productName.includes(searchTerm) || productDesc.includes(searchTerm)) {
+                if (productName.includes(searchTerm)) {
                     card.style.display = 'block';
                     card.style.animation = `slideInUp 0.3s ease ${index * 0.1}s both`;
                     visibleCount++;
