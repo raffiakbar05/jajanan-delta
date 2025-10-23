@@ -136,8 +136,22 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f1f3f4 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.85)), url('asset/monumen_jayandaru.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: 0;
 }
 
 
@@ -155,7 +169,7 @@ a {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     max-width: 800px;
     padding-top: 40px;
