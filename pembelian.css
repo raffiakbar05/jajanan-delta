@@ -87,10 +87,29 @@ a {
 
 /* --- Purchase Header --- */
 .purchase-header {
-    background: linear-gradient(135deg, #f7f7f7 0%, #e9ecef 100%);
-    padding: 60px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.85)), url('asset/monumen_jayandaru.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 40px 0 20px;
     text-align: center;
     position: relative;
+}
+
+.purchase-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.purchase-header .container {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -104,13 +123,15 @@ a {
     font-size: 42px;
     margin-bottom: 15px;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 .section-subtitle {
-    font-size: 18px;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 20px;
+    color: var(--text-dark);
+    max-width: 700px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
 }
 
 .back-btn {
@@ -289,6 +310,19 @@ a {
     margin-bottom: 8px;
     font-weight: 500;
     color: var(--text-dark);
+}
+
+.required {
+    color: var(--red-accent);
+    font-weight: 600;
+}
+
+.shipping-info {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: italic;
 }
 
 .form-group input,

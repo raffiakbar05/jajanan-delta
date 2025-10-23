@@ -92,13 +92,32 @@ a {
 
 /* --- Testimoni Intro Section --- */
 .testimoni-intro-section {
-    background: linear-gradient(135deg, #fcf7f7 0%, #f8f9fa 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.85)), url('asset/monumen_jayandaru.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     position: relative;
+}
+
+.testimoni-intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.testimoni-intro-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -114,12 +133,14 @@ a {
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 .testimoni-intro-section .section-subtitle {
     font-size: 20px;
     margin-bottom: 40px;
     line-height: 1.7;
+    color: var(--text-dark);
 }
 
 /* --- Summary Cards --- */

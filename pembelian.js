@@ -16,7 +16,43 @@ const products = {
 
 let currentProduct = null;
 let quantity = 1;
-const shippingCost = 10000;
+let currentShippingCost = 0;
+
+// Data ongkir berdasarkan kota
+const shippingRates = {
+    'sidoarjo': 5000,
+    'surabaya': 8000,
+    'malang': 12000,
+    'kediri': 15000,
+    'madiun': 18000,
+    'jombang': 10000,
+    'mojokerto': 8000,
+    'gresik': 10000,
+    'lamongan': 12000,
+    'tuban': 15000,
+    'bojonegoro': 18000,
+    'ngawi': 20000,
+    'magetan': 20000,
+    'ponorogo': 22000,
+    'pacitan': 25000,
+    'trenggalek': 25000,
+    'tulungagung': 20000,
+    'blitar': 18000,
+    'batu': 15000,
+    'pasuruan': 12000,
+    'probolinggo': 15000,
+    'lumajang': 18000,
+    'jember': 20000,
+    'bondowoso': 22000,
+    'situbondo': 25000,
+    'banyuwangi': 28000,
+    'jakarta': 25000,
+    'bandung': 30000,
+    'semarang': 20000,
+    'yogyakarta': 22000,
+    'solo': 18000,
+    'denpasar': 35000
+};
 
 // Fungsi untuk format rupiah
 function formatRupiah(amount) {
@@ -38,11 +74,32 @@ function changeQuantity(change) {
 function updateTotal() {
     if (currentProduct) {
         const subtotal = currentProduct.price * quantity;
-        const total = subtotal + shippingCost;
+        const total = subtotal + currentShippingCost;
         
         document.getElementById('subtotal').textContent = formatRupiah(subtotal);
-        document.getElementById('finalTotal').textContent = formatRupiah(total);
+        
+        if (currentShippingCost > 0) {
+            document.getElementById('shipping').textContent = formatRupiah(currentShippingCost);
+            document.getElementById('finalTotal').textContent = formatRupiah(total);
+        } else {
+            document.getElementById('shipping').textContent = '-';
+            document.getElementById('finalTotal').textContent = formatRupiah(subtotal) + ' + Ongkir';
+        }
     }
+}
+
+// Fungsi untuk menghitung ongkir berdasarkan kota
+function calculateShipping(city) {
+    if (!city) {
+        currentShippingCost = 0;
+        updateTotal();
+        return currentShippingCost;
+    }
+    
+    const cityKey = city.toLowerCase().trim();
+    currentShippingCost = shippingRates[cityKey] || 15000; // Default untuk kota yang tidak terdaftar
+    updateTotal();
+    return currentShippingCost;
 }
 
 // Fungsi untuk set produk yang dipilih
@@ -89,14 +146,38 @@ document.getElementById('purchaseForm').addEventListener('submit', function(e) {
         paymentMethod: formData.get('paymentMethod')
     };
     
+    // Validasi wajib untuk alamat dan kota
+    if (!customerData.address || customerData.address.trim() === '') {
+        alert('Alamat lengkap wajib diisi!');
+        document.getElementById('customerAddress').focus();
+        return;
+    }
+    
+    if (!customerData.city || customerData.city.trim() === '') {
+        alert('Kota wajib diisi!');
+        document.getElementById('customerCity').focus();
+        return;
+    }
+    
+    // Hitung ulang ongkir berdasarkan kota yang diisi
+    calculateShipping(customerData.city);
+    
+    // Validasi ongkir sudah dihitung
+    if (currentShippingCost === 0) {
+        alert('Silakan isi kota terlebih dahulu untuk menghitung ongkir!');
+        document.getElementById('customerCity').focus();
+        return;
+    }
+    
     // Simpan data untuk modal
     const subtotal = currentProduct.price * quantity;
-    const total = subtotal + shippingCost;
+    const total = subtotal + currentShippingCost;
     
     orderData = {
         product: currentProduct,
         quantity: quantity,
         subtotal: subtotal,
+        shipping: currentShippingCost,
         total: total,
         customer: customerData
     };
@@ -112,6 +193,25 @@ function showConfirmationModal() {
     document.getElementById('modalTotal').textContent = formatRupiah(orderData.total);
     document.getElementById('modalCustomerName').textContent = orderData.customer.name;
     document.getElementById('modalCustomerPhone').textContent = orderData.customer.phone;
+    
+    // Tambahkan info ongkir jika ada
+    const modalBody = document.querySelector('#confirmationModal .modal-body');
+    const existingShipping = modalBody.querySelector('.shipping-detail');
+    if (existingShipping) {
+        existingShipping.remove();
+    }
+    
+    if (orderData.shipping > 0) {
+        const shippingDetail = document.createElement('div');
+        shippingDetail.className = 'shipping-detail';
+        shippingDetail.innerHTML = `
+            <div class="summary-item">
+                <span>Ongkir ke ${orderData.customer.city}:</span>
+                <span>${formatRupiah(orderData.shipping)}</span>
+            </div>
+        `;
+        modalBody.querySelector('.order-summary').appendChild(shippingDetail);
+    }
     
     document.getElementById('confirmationModal').style.display = 'block';
 }
@@ -147,7 +247,8 @@ function resetForm() {
     document.getElementById('productImage').src = '';
     document.getElementById('quantity').textContent = '1';
     document.getElementById('subtotal').textContent = 'Rp 0';
-    document.getElementById('finalTotal').textContent = formatRupiah(shippingCost);
+    document.getElementById('shipping').textContent = '-';
+    document.getElementById('finalTotal').textContent = 'Rp 0 + Ongkir';
 }
 
 // Fungsi untuk lanjut belanja
@@ -186,8 +287,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Set initial shipping cost
-    document.getElementById('shipping').textContent = formatRupiah(shippingCost);
-    document.getElementById('finalTotal').textContent = formatRupiah(shippingCost);
+    document.getElementById('shipping').textContent = '-';
+    document.getElementById('finalTotal').textContent = 'Rp 0 + Ongkir';
+    
+    // Event listener untuk input kota
+    const cityInput = document.getElementById('customerCity');
+    if (cityInput) {
+        cityInput.addEventListener('blur', function() {
+            const city = this.value.trim();
+            if (city) {
+                calculateShipping(city);
+            }
+        });
+        
+        cityInput.addEventListener('input', function() {
+            const city = this.value.trim();
+            if (city) {
+                calculateShipping(city);
+            }
+        });
+    }
 });
 
 // Export fungsi untuk digunakan di halaman lain

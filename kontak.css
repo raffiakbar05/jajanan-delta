@@ -157,9 +157,28 @@ a {
     align-items: center;
     justify-content: center;
     padding: 0;
-    background: linear-gradient(135deg, #f7f7f7 0%, #e9ecef 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.85)), url('asset/monumen_jayandaru.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
     text-align: center;
+}
+
+.contact-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.contact-header .container {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -181,7 +200,7 @@ a {
 
 .contact-header p {
     font-size: 20px;
-    color: var(--text-light);
+    color: var(--text-dark);
     max-width: 700px;
     margin: 0 auto 50px;
     line-height: 1.7;

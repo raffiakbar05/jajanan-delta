@@ -115,8 +115,27 @@ a {
     align-items: center;
     justify-content: center;
     padding: 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(248, 249, 250, 0.85)), url('asset/monumen_jayandaru.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
+}
+
+.about-intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.about-intro-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -132,6 +151,7 @@ a {
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 .about-intro-section .section-subtitle-large {
@@ -143,6 +163,19 @@ a {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.header-logo {
+    margin-bottom: 30px;
+}
+
+.header-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 4px solid #ffffff;
 }
 
 /* --- Cerita Kami Section --- */
