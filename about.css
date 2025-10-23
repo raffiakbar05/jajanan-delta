@@ -119,17 +119,7 @@ a {
     position: relative;
 }
 
-.about-intro-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('asset/monumen_jayandaru.jpg') center/cover;
-    opacity: 0.08;
-    z-index: 0;
-}
+
 
 .about-intro-section .container {
     position: relative;

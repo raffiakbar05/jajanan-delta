@@ -140,16 +140,7 @@ a {
     overflow: hidden;
 }
 
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('asset/monumen_jayandaru.jpg') center/cover;
-    opacity: 0.08;
-    z-index: 0;
-}
+
 
 .hero-background::after {
     content: '';
@@ -461,15 +452,7 @@ a {
     overflow: hidden;
 }
 
-.cta-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('asset/monumen_jayandaru.jpg') center/cover;
-    opacity: 0.1;
-}
+
 
 .cta-background::after {
     content: '';
