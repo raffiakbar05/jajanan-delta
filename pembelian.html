@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelian - Jajanan Delta</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="pembelian.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="landing.html" class="logo">
+                <img src="asset/logo.jpg" alt="Logo Jajanan Delta"> 
+                <span><span class="logo-green">Jajanan</span> <span class="logo-red">Delta</span></span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="beranda.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="testimoni.html">Testimoni</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="purchase-header">
+            <div class="container">
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Kembali</span>
+                </button>
+                <h1 class="section-title">Pembelian <span class="logo-green">Jajanan</span> <span class="logo-red">Delta</span></h1>
+                <p class="section-subtitle">Lengkapi data pembelian Anda untuk mendapatkan jajanan tradisional berkualitas</p>
+            </div>
+        </section>
+
+        <section class="purchase-content">
+            <div class="container">
+                <div class="purchase-layout">
+                    <div class="product-summary">
+                        <h3>Ringkasan Pesanan</h3>
+                        <div class="selected-product" id="selectedProduct">
+                            <div class="product-info">
+                                <img id="productImage" src="" alt="">
+                                <div class="product-details">
+                                    <h4 id="productName">Pilih Produk</h4>
+                                    <p id="productLocation"><i class="fas fa-map-marker-alt"></i> <span>-</span></p>
+                                    <p id="productPrice">Rp 0</p>
+                                </div>
+                            </div>
+                            <div class="quantity-control">
+                                <button type="button" onclick="changeQuantity(-1)">-</button>
+                                <span id="quantity">1</span>
+                                <button type="button" onclick="changeQuantity(1)">+</button>
+                            </div>
+                        </div>
+                        <div class="order-total">
+                            <div class="total-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">Rp 0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Ongkir:</span>
+                                <span id="shipping">Rp 10.000</span>
+                            </div>
+                            <div class="total-row final-total">
+                                <span>Total:</span>
+                                <span id="finalTotal">Rp 10.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="purchase-form">
+                        <h3>Data Pembeli</h3>
+                        <form id="purchaseForm">
+                            <div class="form-group">
+                                <label for="customerName">Nama Lengkap</label>
+                                <input type="text" id="customerName" name="customerName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customerPhone">Nomor WhatsApp</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customerEmail">Email</label>
+                                <input type="email" id="customerEmail" name="customerEmail" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customerAddress">Alamat Lengkap</label>
+                                <textarea id="customerAddress" name="customerAddress" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customerCity">Kota</label>
+                                <input type="text" id="customerCity" name="customerCity" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="customerNotes">Catatan Tambahan (Opsional)</label>
+                                <textarea id="customerNotes" name="customerNotes" rows="2"></textarea>
+                            </div>
+                            
+                            <div class="payment-methods">
+                                <h4>Metode Pembayaran</h4>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="paymentMethod" value="cod" checked>
+                                        <span class="payment-label">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            Bayar di Tempat (COD)
+                                        </span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="paymentMethod" value="transfer">
+                                        <span class="payment-label">
+                                            <i class="fas fa-university"></i>
+                                            Transfer Bank
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                Pesan Sekarang
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-layout">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="asset/logonew.jpg" alt="Logo Jajanan Delta"> 
+                    <span><span class="logo-green">Jajanan</span> <span class="logo-red">Delta</span></span>
+                </div>
+                <p>UMKM yang menyediakan jajanan tradisional dengan kualitas terbaik. Cita rasa autentik dan kualitas terbaik untuk keluarga Indonesia.</p>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Menu Utama</h3>
+                <ul>
+                    <li><a href="beranda.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="testimoni.html">Testimoni</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Kontak</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. Gajah Mada no 25, Sidoarjo</li>
+                    <li><i class="fas fa-phone-alt"></i> +62 857-3738-6768</li>
+                    <li><i class="fas fa-envelope"></i> jajanandelta21@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Konfirmasi -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Konfirmasi Pesanan</h3>
+            </div>
+            <div class="modal-body">
+                <div class="order-summary">
+                    <h4>Ringkasan Pesanan:</h4>
+                    <div class="summary-item">
+                        <span>Produk:</span>
+                        <span id="modalProductName">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Jumlah:</span>
+                        <span id="modalQuantity">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Total:</span>
+                        <span id="modalTotal">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Nama:</span>
+                        <span id="modalCustomerName">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>WhatsApp:</span>
+                        <span id="modalCustomerPhone">-</span>
+                    </div>
+                </div>
+                <p class="modal-message">Apakah Anda yakin ingin melanjutkan pemesanan ini?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="closeModal()">Batal</button>
+                <button type="button" class="btn-confirm" onclick="confirmOrder()">Ya, Pesan Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sukses -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <div class="modal-header success">
+                <i class="fas fa-check-circle"></i>
+                <h3>Pesanan Berhasil!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Pesanan Anda telah berhasil diproses!</p>
+                <p>Tim kami akan segera menghubungi Anda untuk konfirmasi dan pengiriman.</p>
+                <div class="success-actions">
+                    <button type="button" class="btn-primary" onclick="continueShopping()">Lanjut Belanja</button>
+                    <button type="button" class="btn-secondary" onclick="goToHome()">Kembali ke Beranda</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="pembelian.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (mobileMenuToggle && mainNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (mainNav.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+        }
+        
+        // Fungsi untuk kembali ke halaman sebelumnya
+        function goBack() {
+            if (document.referrer && document.referrer !== window.location.href) {
+                window.history.back();
+            } else {
+                window.location.href = 'produk.html';
+            }
+        }
+    </script>
+</body>
+</html>
